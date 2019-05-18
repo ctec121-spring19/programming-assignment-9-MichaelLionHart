@@ -42,14 +42,51 @@ morse_list = [' ', '--..--', '.-.-.-', '-----','.----', '..---', '...--',
                 '-.--', '--..']
 IPO
 ==========
-INPUTS: 
-PROCESSES: 
-OUTPUTS: 
+INPUTS:         # getting the sequence from the user:   sequence = input('Enter any sequence of lowercase letters and/or numbers: ') 
+                # Creating a morse list, to store the morse code, to access later
+                # Creating another list, this time of the actual numbers and letters, ordered in the exact
+                  same order as the morse code list.
+                # Creating an empty list to store the converted morse code
+
+PROCESSES:      for i in sequence:                                     # for loop to iterate through user's string
+                    character = i                                      # assigning the character to a variable 'character'
+                    for j in char_list:                                # nesting another for loop to iterate thorugh the char_list
+                        if character == j:                             # nesting an if statement inside that for loop, to find the character in char_list that matches the user's input character
+                            x = char_list.index(j)                     # creating a variable to hold the INDEX of the location of said character in char_list
+                            finalMorse_list.append(morse_list[x])      # finding matching item in morse_list (because they are the same exact order), 
+                                                                         and appending the morse character onto the empty finalMorse_list
+
+OUTPUTS:        printing finalMorse_list
 
 """
 
+
 def main():
-    pass # remove this line
-    # your code goes here
+    morse_list = [' ', '--..--', '.-.-.-', '-----', '.----', '..---', '...--',
+                  '....-', '.....', '-....', '--...', '---..', '----.',
+                  '.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....',
+                  '..', '.---', '-.-', '.-..', '--', '-.', '---', '.--.',
+                  '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-',
+                  '-.--', '--..']
+
+    char_list = [' ', ',', '.', '0', '1', '2', '3',
+                 '4', '5', '6', '7', '8', '9',
+                 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+                 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+                 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+                 'y', 'z']
+
+    finalMorse_list = []
+    sequence = input('Enter any sequence of lowercase letters and/or numbers: ')
+
+    for i in sequence:
+        character = i
+        for j in char_list:
+            if character == j:
+                x = char_list.index(j)
+                finalMorse_list.append(morse_list[x])
+
+    print(finalMorse_list)
+
 
 main()

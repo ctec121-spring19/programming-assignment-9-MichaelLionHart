@@ -28,16 +28,27 @@ HINTS
 - Append it to the end of the current word
 - Use the accumulator pattern to build a string
 
+
+
 IPO
 ==========
-INPUTS: 
-PROCESSES: 
-OUTPUTS: 
+INPUTS:       # sentence = input("Input Sentence: ")
+
+PROCESSES:    # converting sentence into a list of words with sentence = sentence.split()
+              # for loop to iterate through each word, then string slicing to present
+              # the desired output
+              
+OUTPUTS:      # printing the desired output with a print statement
 
 """
 
+
 def main():
-    pass # remove this line
-    # your code goes here
+    sentence = input("Input Sentence: ")
+    sentence = sentence.split()
+    for word in sentence:
+        print(word[1:] + word[0] + "ay", end=" ")
+    print()
+
 
 main()

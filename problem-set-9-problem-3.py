@@ -26,14 +26,31 @@ HINTS
 
 IPO
 ==========
-INPUTS: 
-PROCESSES: 
-OUTPUTS: 
+INPUTS:     numbers = input('enter a series of numbers: ')  # having user input numbers, then assigning them to variable
+            digit = ''                                      # creating empty string to store values to be converted to int
+            finalDigit = 0                                  # creating variable to accumulate the sum of each integer
+
+PROCESSES:  for number in range(len(numbers)):              # for loop to iterate through the numbers string
+                digit = numbers[number]                     # selecting next character in numbers string by string indexing
+                digit = int(digit)                          # converting character to an integer
+                finalDigit = finalDigit + digit             # accumulating the final sum through each iteration of the loop
+
+OUTPUTS:    print()
+            print('The sum of the numbers you entered is: ', finalDigit)     # printing output
+            print()
 
 """
 
 def main():
-    pass # remove this line
-    # your code goes here
+    numbers = input('enter a series of numbers: ')
+    digit = ''
+    finalDigit = 0
+    for number in range(len(numbers)):
+        digit = numbers[number]
+        digit = int(digit)
+        finalDigit = finalDigit + digit
+    print()
+    print('The sum of the numbers you entered is: ', finalDigit)
+    print()
 
 main()
