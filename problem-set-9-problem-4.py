@@ -86,7 +86,7 @@ def main():
                 x = char_list.index(j)
                 finalMorse_list.append(morse_list[x])
 
-    print(finalMorse_list)
+    print(' '.join(finalMorse_list))
 
 
 main()
